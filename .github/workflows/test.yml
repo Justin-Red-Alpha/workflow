@@ -1,10 +1,14 @@
-name: Run Python Script
+name: Build and Test for errors
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  run-python:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,3 +27,6 @@ jobs:
             echo "❌ main.py not found, skipping execution."
             exit 1
           fi
+
+      - name: Run tests
+        run: python -c "import main; main.test_add()"
