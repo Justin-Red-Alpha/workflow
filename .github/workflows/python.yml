@@ -16,7 +16,10 @@ jobs:
 
       - name: Check if main.py exists
         run: |
-#          if [ -f main.py ]; then
-#            echo "✅ main.py found, running it..."
+          if [ -f main.py ]; then
+            echo "✅ main.py found, running it..."
             python main.py
-#          fi
+          else
+            echo "❌ main.py not found, skipping execution."
+            exit 1
+          fi
