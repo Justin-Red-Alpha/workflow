@@ -1,9 +1,9 @@
-from main import add
+from main import subtract
 
 def test():
-    assert add(1, 2) == 3, "test failed"
-    assert add(3, 4) == 7, "test failed"
-    assert add(5, 6) != 10, "test failed"
+    assert subtract(2, 1) == 1, "test failed"
+    assert subtract(5, 3) == 2, "test failed"
+    assert subtract(9, 5) != 5, "test failed"
 
 if __name__ == "__main__":
     test()
