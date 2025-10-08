@@ -18,6 +18,13 @@ jobs:
         with:
           fetch-depth: 0  # ✅ fetch all history and tags
 
+      #New step — install dependencies
+      - name: Environment setup
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+
       - name: Fetch tags
         run: git fetch --tags
 
