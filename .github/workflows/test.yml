@@ -29,4 +29,4 @@ jobs:
           fi
 
       - name: Run tests
-        run: python -c "import main; main.test()"
+        run: python python.py
